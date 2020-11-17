@@ -2,6 +2,7 @@ package pkg1
 
 import (
 	"github.com/Duffleman/dfl-public-go/pkg2"
+	"github.com/kr/pretty"
 )
 
 type Humanoid struct {
@@ -14,4 +15,8 @@ type Limb struct {
 	Name     string  `json:"name"`
 	Parent   *Limb   `json:"parent"`
 	Children []*Limb `json:"children"`
+}
+
+func (h *Humanoid) Dump() {
+	pretty.Println(h)
 }
